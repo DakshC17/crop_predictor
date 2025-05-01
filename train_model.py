@@ -20,7 +20,7 @@ features = ['State_Name', 'District_Name', 'Crop_Year', 'Season', 'Area',
             'N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']
 target = 'Crop'
 
-# Encode categorical features
+# Encode categorical columns
 categorical_cols = ['State_Name', 'District_Name', 'Season']
 encoders = {}
 
@@ -35,8 +35,18 @@ X = df[features]
 y = df[target]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Train model
-model = RandomForestClassifier(n_estimators=100, random_state=42)
+# ✅ Train optimized Random Forest (no GridSearch)
+model = RandomForestClassifier(
+    n_estimators=200,
+    max_depth=20,
+    min_samples_split=5,
+    min_samples_leaf=2,
+    max_features='sqrt',
+    bootstrap=True,
+    random_state=42,
+    n_jobs=-1
+)
+
 model.fit(X_train, y_train)
 
 # Evaluate
@@ -46,4 +56,4 @@ print("✅ Accuracy Score:", accuracy_score(y_test, y_pred))
 
 # Save model
 joblib.dump(model, f"{MODEL_DIR}/crop_prediction_model.pkl")
-print("💾 Model saved to:", f"{MODEL_DIR}/crop_prediction_model.pkl")
+print(f"💾 Model saved to: {MODEL_DIR}/crop_prediction_model.pkl")
