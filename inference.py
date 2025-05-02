@@ -37,19 +37,19 @@ def predict_crop(input_data: dict) -> str:
 # Example usage
 if __name__ == "__main__":
     sample_input = {
-        "State_Name": "Maharashtra",
-        "District_Name": "Pune",
+        "State_Name": "Punjab",
+        "District_Name": "Jalandhar",
         "Crop_Year": 2023,
-        "Season": "Kharif",
+        "Season": "Rabi",
         "Area": 2.5,
-        "N": 90,
+        "N": 92,
         "P": 42,
         "K": 43,
-        "temperature": 26.4,
-        "humidity": 85.0,
+        "temperature": 29.4,
+        "humidity": 90.0,
         "ph": 6.5,
-        "rainfall": 250.0,
+        "rainfall": 253.0,
     }
 
     result = predict_crop(sample_input)
-    print("🌱 Predicted Crop:", result)
+    print("Predicted Crop:", result)
