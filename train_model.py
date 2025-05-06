@@ -57,3 +57,5 @@ print("✅ Accuracy Score:", accuracy_score(y_test, y_pred))
 # Save model
 joblib.dump(model, f"{MODEL_DIR}/crop_prediction_model.pkl")
 print(f"💾 Model saved to: {MODEL_DIR}/crop_prediction_model.pkl")
+
+## this is a new comment
