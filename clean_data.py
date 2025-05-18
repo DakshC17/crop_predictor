@@ -23,3 +23,8 @@ df['Crop'] = df['Crop'].str.strip().str.title()
 
 # Save the cleaned dataset to a new CSV file for model training (ab ye clean version use hoga training mein)
 df.to_csv("/home/dakshchoudhary/Desktop/projects/crop_predictor/data/cleaned_crop_data.csv", index=False)
+
+
+
+#this data consist of around 14 rows and 1 columns 
+

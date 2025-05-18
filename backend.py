@@ -3,6 +3,7 @@ import pandas as pd
 import joblib
 import os
 from fastapi.middleware.cors import CORSMiddleware
+import pydantic as py
 
 
 app = FastAPI()
